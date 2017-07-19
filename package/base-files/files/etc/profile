@@ -50,3 +50,7 @@ service() {
 	}
 	/etc/init.d/$@
 }
+
+alias ll='ls -al'
+alias g=grep
+
