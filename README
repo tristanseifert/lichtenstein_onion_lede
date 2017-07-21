@@ -1,3 +1,18 @@
+# Onion Omega2 Firmware Build System
+
+This buildsystem for the LEDE Linux distribution has been modified by Onion Corporation to build firmware for the Onion Omega2 and Omega2+
+
+**Onion Corporation is not responsible for any damage to your device caused by using customer firmware or packages not built and released by Onion Corporation.**
+
+## Notes
+
+* Due to incompatibilities with recent kernel updates, building a firmware with the `Ralink APSoC WiFi SoftAP driver` **will cause a kernel panic during boot**
+	* This can be fixed by reflashing the Omega's firmware using the Omega's Bootloader and Ethernet Expansion
+	* We are working on a new implementation of the WiFi driver, will be arriving in Q3 2017! Stay tuned!
+
+
+# LEDE Linux Distribution
+
 This is the buildsystem for the LEDE Linux distribution.
 
 Please use "make menuconfig" to choose your preferred
