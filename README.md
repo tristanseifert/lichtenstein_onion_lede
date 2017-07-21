@@ -10,6 +10,10 @@ This buildsystem for the LEDE Linux distribution has been modified by Onion Corp
 	* This can be fixed by reflashing the Omega's firmware using the Omega's Bootloader and Ethernet Expansion
 	* We are working on a new implementation of the WiFi driver, will be arriving in Q3 2017! Stay tuned!
 
+## Additional Reading
+
+* See `CHANGELOG.md` for a listing of the changes for each firmware version and build
+* See `DISCLAIMER.md` for Onion's disclaimer regarding this build system
 
 # LEDE Linux Distribution
 
