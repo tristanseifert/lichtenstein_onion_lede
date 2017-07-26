@@ -161,6 +161,11 @@ Initial firmware sent to be flashed at the factory
 ### Build Notes
 Defining the changes in each build. *Note that if a number is missing, that build failed the deployment process.*
 
+#### b171
+*July 26, 2017*
+
+* Added `mosquitto-client-ssl` to Onion Package Repo
+
 #### b170
 *July 19, 2017*
 
