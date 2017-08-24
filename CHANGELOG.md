@@ -161,6 +161,12 @@ Initial firmware sent to be flashed at the factory
 ### Build Notes
 Defining the changes in each build. *Note that if a number is missing, that build failed the deployment process.*
 
+#### b172 
+*August 24, 2017*
+
+* Added back mountd package to firmware
+* Added new `dht-sensor` program to Onion Package Repo
+
 #### b171
 *July 26, 2017*
 
