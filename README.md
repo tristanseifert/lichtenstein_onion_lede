@@ -2,7 +2,7 @@
 
 This buildsystem for the LEDE Linux distribution has been modified by Onion Corporation to build firmware for the Onion Omega2 and Omega2+
 
-**Onion Corporation is not responsible for any damage to your device caused by using customer firmware or packages not built and released by Onion Corporation.**
+**Onion Corporation is not responsible for any damage to your device caused by using custom firmware or packages not built and released by Onion Corporation.**
 
 ## Notes
 

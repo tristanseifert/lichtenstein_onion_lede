@@ -30,5 +30,5 @@ ENV FORCE_UNSAFE_CONFIGURE 1
 COPY . /root/source
 WORKDIR /root/source
 
-RUN sh scripts/onion-feed-setup.sh
+RUN sh scripts/onion-feed-setup.sh && git checkout .config
 
