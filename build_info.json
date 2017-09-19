@@ -1,0 +1,10 @@
+{
+        "version": "0.1.10",
+        "system": "openwrt",
+        "device": "omega2",
+        "devices": [
+                "omega2",
+                "omega2+"
+        ]
+}
+

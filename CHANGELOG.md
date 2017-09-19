@@ -161,6 +161,15 @@ Initial firmware sent to be flashed at the factory
 ### Build Notes
 Defining the changes in each build. *Note that if a number is missing, that build failed the deployment process.*
 
+#### b174
+*Sept 19, 2017*
+
+* Added `power-dock2` application to Onion Package Repo
+* New versions of existing packages:
+	* Onion Console v0.1.3: works on mobile & other bug fixes
+	* i2c-exp-driver v0.5: new api function to read without specifying an address
+	* spi-gpio-driver v0.2: merged typo fix PR
+
 #### b173
 *August 29, 2017*
 
