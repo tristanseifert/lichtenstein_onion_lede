@@ -1,0 +1,7 @@
+#!/bin/sh
+
+val=$(uci -q get wireless.\@wifi-iface[0].ApCliEnable)
+if [ "$val" != "" ]; then
+	sh /usr/bin/wifisetup reset
+fi
+exit 0
