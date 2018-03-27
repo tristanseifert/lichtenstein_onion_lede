@@ -170,8 +170,22 @@ Initial firmware sent to be flashed at the factory
 ### Build Notes
 Defining the changes in each build. *Note that if a number is missing, that build failed the deployment process.*
 
+#### b176
+*Mar 26, 2017*
+
+* SPI kernel driver - integrated patch that alleviates issues
+  * full-duplex transmissions are replaced with half-duplex
+  * able to transmit larger "packets" of data at a time (no longer just 16 bytes before CS deasserts
+* Added Python `spidev` module
+* package updates
+  * console install tool - updated to work regardless of network configuration, specifically, works with ethernet connectivity now
+  * i2c exp driver -  i2c library updated to fix memory overwrite bug
+  * python gpio module - updated to alleviate bug with setting output gpios
+  * avrdude - upped version number to avoid installing broken v6.3 
+* Added `nfc-utils` and `libnfc` packages
+
 #### b175
-*Mar 27, 2017*
+*Mar 26, 2017*
 
 * Added WiFi Warp Core
   * Integrates `wifisetup` command
