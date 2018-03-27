@@ -24,6 +24,15 @@ The build number will continuously increment over the course of development.
 ### Versions
 Definining the differences in each version change
 
+#### 0.2.0
+**WiFi Warp Core Release**
+
+A whole slew of updates, the most major being the new WiFi Warp Core - Enhanced MT7688 WiFi Driver
+
+* Setup Wizard updated for compatibility new WiFi Warp Core and be more communicative with the user 
+* Console Settings app updated for compatibility with WiFi Warp Core
+* Updates to onion ubus package, base-www, et al
+
 #### 0.1.10
 **Fast-GPIO Fix Release**
 
@@ -160,6 +169,20 @@ Initial firmware sent to be flashed at the factory
 
 ### Build Notes
 Defining the changes in each build. *Note that if a number is missing, that build failed the deployment process.*
+
+#### b175
+*Mar 27, 2017*
+
+* Added WiFi Warp Core
+  * Integrates `wifisetup` command
+    * wifisetup updated to take in base64 arguments
+  * Removal of old wifi-manager and driver
+* Onion Console v0.1.4: works with WiFi Warp Core, better UX - uses base64 encoding to ensure more flexibility with input, fixed terminal app - now accessible regardless of network configuration
+* Setup Wizard v0.3: works with WiFi Warp Core, more communicative with the user, better UX - uses base64 encoding to ensure more flexibility with input
+* Onion Ubus v0.3: updates to wifi scan to reflect new data coming from wifi scan (RSSI, encryption strings), fixes for wifisetup
+* Tools to perform base64 and URL encode/decode installed 
+* Hostname Fix tool: compatible with Warp Core, more flexible - can work with any root basename
+
 
 #### b174
 *Sept 19, 2017*
