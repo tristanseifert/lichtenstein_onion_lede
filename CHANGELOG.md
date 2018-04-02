@@ -170,6 +170,15 @@ Initial firmware sent to be flashed at the factory
 ### Build Notes
 Defining the changes in each build. *Note that if a number is missing, that build failed the deployment process.*
 
+#### b177
+*Apr 2, 2017*
+
+* Added support for I2S - MAX98090 codec
+* Updated Wifi Warp Core 
+  * Better reconnect timing
+  * Print statement when apcli0 link is up
+* Added `nfc` packages to the packeg repo
+
 #### b176
 *Mar 26, 2017*
 

@@ -1,10 +1,10 @@
 {
         "version": "0.2.0",
         "system": "openwrt",
-        "device": "omega2",
+        "core": "omega2",
         "devices": [
-                "omega2",
-                "omega2+"
+                {"name":"omega2","symbol":"omega2"},
+                {"name":"omega2+","symbol":"omega2p"}
         ]
 }
 

@@ -30,6 +30,24 @@
 			linux,code = <KEY_RESTART>;
 		};
 	};
+
+	sound {
+                compatible = "simple-audio-card";
+                simple-audio-card,name = "Audio-I2S";
+                simple-audio-card,format = "i2s";
+                simple-audio-card,bitclock-master = <&cpu_dai_master>;
+                simple-audio-card,frame-master = <&cpu_dai_master>;
+                simple-audio-card,widgets =
+                        "Speaker", "External Speaker";
+
+                cpu_dai_master: simple-audio-card,cpu {
+                        sound-dai = <&i2s>;
+                };
+
+                dailink0_master: simple-audio-card,codec {
+                        sound-dai = <&codec>;
+                };
+        };
 };
 
 &pinctrl {
@@ -142,6 +160,20 @@
 
 &i2c {
 	status = "okay";
+	codec: max98091@10 {
+                #sound-dai-cells = <0>;
+                compatible = "maxim,max98091";
+                reg = <0x10>;
+        };
+};
+
+&gdma {
+        status = "okay";
+};
+
+&i2s {
+        #sound-dai-cells = <0>;
+        status = "okay";
 };
 
 &uart1 {

@@ -1,0 +1,13 @@
+Index: linux-4.4.74/sound/soc/codecs/Kconfig
+===================================================================
+--- linux-4.4.74.orig/sound/soc/codecs/Kconfig
++++ linux-4.4.74/sound/soc/codecs/Kconfig
+@@ -481,7 +481,7 @@ config SND_SOC_MAX98088
+        tristate
+
+ config SND_SOC_MAX98090
+-       tristate
++       tristate "Maxim MAX98090 Codec"
+
+ config SND_SOC_MAX98095
+        tristate
