@@ -170,6 +170,11 @@ Initial firmware sent to be flashed at the factory
 ### Build Notes
 Defining the changes in each build. *Note that if a number is missing, that build failed the deployment process.*
 
+#### b179
+*Apr 10, 2018*
+
+* Added `libfreefare` and associated utilites to package repo, also added as dependency to `nfc-exp` package
+
 #### b178
 *Apr 6, 2018*
 
