@@ -170,6 +170,12 @@ Initial firmware sent to be flashed at the factory
 ### Build Notes
 Defining the changes in each build. *Note that if a number is missing, that build failed the deployment process.*
 
+#### b180
+*Apr 10, 2018*
+
+* Addition of OnionOS and supporting Apps (Editor and NFC-RFID Expansion)
+* Update base-www to support OnionOS
+
 #### b179
 *Apr 10, 2018*
 
