@@ -170,6 +170,14 @@ Initial firmware sent to be flashed at the factory
 ### Build Notes
 Defining the changes in each build. *Note that if a number is missing, that build failed the deployment process.*
 
+#### b182
+*Apr 12, 2018*
+
+* Warp Core Update
+  * improved processing of connection parameters
+  * fixed an issue where some WPA1 crypto ciphers weren't properly recorded
+  * added debug command to wifisetup to aid in end-user wifi connection debug
+
 #### b181
 *Apr 11, 2018*
 
