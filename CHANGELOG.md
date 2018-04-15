@@ -170,6 +170,13 @@ Initial firmware sent to be flashed at the factory
 ### Build Notes
 Defining the changes in each build. *Note that if a number is missing, that build failed the deployment process.*
 
+#### b183
+*Apr 15, 2018*
+
+* Power Dock 2 package update
+  * Can now optionally output battery percentage as well
+  * Added continuous mode of operation: report battery level at a specified interval
+
 #### b182
 *Apr 12, 2018*
 
