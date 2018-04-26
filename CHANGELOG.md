@@ -170,20 +170,27 @@ Initial firmware sent to be flashed at the factory
 ### Build Notes
 Defining the changes in each build. *Note that if a number is missing, that build failed the deployment process.*
 
+#### b184
+*Apr 17, 2018*
+
+* OnionOS Update
+	* Added Battery Level Monitoring w/ Power Dock 2 App
+	* Implemented automatic app loading based on what is installed 
+
 #### b183
 *Apr 15, 2018*
 
 * Power Dock 2 package update
-  * Can now optionally output battery percentage as well
-  * Added continuous mode of operation: report battery level at a specified interval
+	* Can now optionally output battery percentage as well
+	* Added continuous mode of operation: report battery level at a specified interval
 
 #### b182
 *Apr 12, 2018*
 
 * Warp Core Update
-  * improved processing of connection parameters
-  * fixed an issue where some WPA1 crypto ciphers weren't properly recorded
-  * added debug command to wifisetup to aid in end-user wifi connection debug
+	* improved processing of connection parameters
+	* fixed an issue where some WPA1 crypto ciphers weren't properly recorded
+	* added debug command to wifisetup to aid in end-user wifi connection debug
 
 #### b181
 *Apr 11, 2018*
@@ -211,31 +218,31 @@ Defining the changes in each build. *Note that if a number is missing, that buil
 
 * Added support for I2S - MAX98090 codec
 * Updated Wifi Warp Core 
-  * Better reconnect timing
-  * Print statement when apcli0 link is up
+	* Better reconnect timing
+	* Print statement when apcli0 link is up
 * Added `nfc` packages to the package repo
 
 #### b176
 *Mar 26, 2018*
 
 * SPI kernel driver - integrated patch that alleviates issues
-  * full-duplex transmissions are replaced with half-duplex
-  * able to transmit larger "packets" of data at a time (no longer just 16 bytes before CS deasserts
+	* full-duplex transmissions are replaced with half-duplex
+	* able to transmit larger "packets" of data at a time (no longer just 16 bytes before CS deasserts
 * Added Python `spidev` module
 * package updates
-  * console install tool - updated to work regardless of network configuration, specifically, works with ethernet connectivity now
-  * i2c exp driver -  i2c library updated to fix memory overwrite bug
-  * python gpio module - updated to alleviate bug with setting output gpios
-  * avrdude - upped version number to avoid installing broken v6.3 
+	* console install tool - updated to work regardless of network configuration, specifically, works with ethernet connectivity now
+	* i2c exp driver -  i2c library updated to fix memory overwrite bug
+	* python gpio module - updated to alleviate bug with setting output gpios
+	* avrdude - upped version number to avoid installing broken v6.3 
 * Added `nfc-utils` and `libnfc` packages
 
 #### b175
 *Mar 26, 2018*
 
 * Added WiFi Warp Core
-  * Integrates `wifisetup` command
-    * wifisetup updated to take in base64 arguments
-  * Removal of old wifi-manager and driver
+	* Integrates `wifisetup` command
+	* wifisetup updated to take in base64 arguments
+	* Removal of old wifi-manager and driver
 * Onion Console v0.1.4: works with WiFi Warp Core, better UX - uses base64 encoding to ensure more flexibility with input, fixed terminal app - now accessible regardless of network configuration
 * Setup Wizard v0.3: works with WiFi Warp Core, more communicative with the user, better UX - uses base64 encoding to ensure more flexibility with input
 * Onion Ubus v0.3: updates to wifi scan to reflect new data coming from wifi scan (RSSI, encryption strings), fixes for wifisetup
