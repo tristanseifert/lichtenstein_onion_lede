@@ -170,6 +170,16 @@ Initial firmware sent to be flashed at the factory
 ### Build Notes
 Defining the changes in each build. *Note that if a number is missing, that build failed the deployment process.*
 
+#### b185
+*Apr 26, 2018*
+
+* Added slew of packages to Onion repo
+	* `nodogsplash` captive portal + `kmod-ipt-ipopt`
+	* `kmod-pps` + `kmod-pps-gpio`
+	* `bind` server, tools, and lib
+	* `etherwake`
+	* `mdns` daemon + utils
+
 #### b184
 *Apr 17, 2018*
 
