@@ -9,6 +9,10 @@
 	gpio-leds {
 		compatible = "gpio-leds";
 
+		system_led: system {
+			gpios = <&gpio1 12 GPIO_ACTIVE_LOW>;
+		};
+
 		eth_link_led: system {
 			gpios = <&gpio1 18 GPIO_ACTIVE_HIGH>;
 		};
