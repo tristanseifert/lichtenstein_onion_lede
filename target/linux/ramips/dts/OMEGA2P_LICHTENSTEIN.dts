@@ -13,11 +13,11 @@
 			gpios = <&gpio1 12 GPIO_ACTIVE_LOW>;
 		};
 
-		eth_link_led: system {
+		eth_link_led: ethlink {
 			gpios = <&gpio1 18 GPIO_ACTIVE_HIGH>;
 		};
 
-		eth_act_led: system {
+		eth_act_led: ethact {
 			gpios = <&gpio1 19 GPIO_ACTIVE_HIGH>;
 		};
 	};
