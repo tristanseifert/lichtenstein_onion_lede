@@ -105,6 +105,8 @@ platform_check_image() {
 	nw718|\
 	omega2|\
 	omega2p|\
+	omega2_lichtenstein|\
+	omega2p_lichtenstein|\
 	oy-0001|\
 	pbr-d1|\
 	pbr-m1|\
