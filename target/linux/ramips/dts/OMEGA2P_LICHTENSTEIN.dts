@@ -1,0 +1,42 @@
+/dts-v1/;
+
+#include "OMEGA2.dtsi"
+
+/ {
+	model = "Onion Omega2+ (Lichtenstein)";
+
+	/* add the ethernet link and activity LEDs */
+	gpio-leds {
+		compatible = "gpio-leds";
+
+		eth_link_led: system {
+			gpios = <&gpio1 18 GPIO_ACTIVE_HIGH>;
+		};
+
+		eth_act_led: system {
+			gpios = <&gpio1 19 GPIO_ACTIVE_HIGH>;
+		};
+	};
+
+	memory@0 {
+		device_type = "memory";
+		reg = <0x0 0x8000000>;
+	};
+};
+
+&firmware {
+	reg = <0x50000 0x1fb0000>;
+};
+
+/* give the LEDs some labels */
+&system_led {
+	label = "omega2_system_led";
+};
+
+&eth_link_led {
+	label = "lichtenstein_ethlink_led";
+};
+
+&eth_act_led {
+	label = "lichtenstein_ethact_led";
+};

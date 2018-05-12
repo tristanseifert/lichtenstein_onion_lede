@@ -50,3 +50,11 @@ define Device/omega2p
   DEVICE_PACKAGES:= kmod-usb2 kmod-usb-ohci uboot-envtools kmod-sdhci-mt7620
 endef
 TARGET_DEVICES += omega2p
+
+define Device/omega2p_lichtenstein
+  DTS := OMEGA2P_LICHTENSTEIN
+  IMAGE_SIZE := $(ralink_default_fw_size_32M)
+  DEVICE_TITLE := Onion Omega2+ (Lichtenstein)
+  DEVICE_PACKAGES:= kmod-usb2 kmod-usb-ohci uboot-envtools kmod-sdhci-mt7620
+endef
+TARGET_DEVICES += omega2p_lichtenstein

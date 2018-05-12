@@ -1,14 +1,13 @@
 #!/bin/sh
 
 . /lib/ramips.sh
-board=$(ramips_board_name)
 
+# set the hostname to be "lichtenstein-" plus the last six hex digits of the
+# device MAC address
 devmac=$(cat /sys/class/net/eth0/address | awk -F':' '{ print $4 $5 $6 }')
 
 uci -q batch <<-EOF > /dev/null
 	set system.@system[0].hostname=lichtenstein-$devmac
-    	set system.@led[0].sysfs="$board:amber:system"
-    	set system.@led[0].trigger='default-on'
 	commit system
 EOF
 

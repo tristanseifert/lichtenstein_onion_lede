@@ -1,0 +1,12 @@
+#!/bin/sh
+
+. /lib/ramips.sh
+
+# set the system LED to be solid when bootup completes
+uci -q batch <<-EOF > /dev/null
+	set system.@led[0].sysfs="omega2_system_led"
+	set system.@led[0].trigger='default-on'
+	commit system
+EOF
+
+exit 0

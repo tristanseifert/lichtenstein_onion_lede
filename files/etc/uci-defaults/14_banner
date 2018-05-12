@@ -13,7 +13,7 @@ echo "$LICHTENSTEIN" > /etc/banner
 host=$(uci get system.@system[0].hostname)
 uname=$(uname -rsom)
 
-echo " -----------------------------------------------------" >> /etc/banner
+echo "---------------------------------------------------------" >> /etc/banner
 echo "   Hostname: $host" >> /etc/banner
 echo "     Kernel: $uname" >> /etc/banner
-echo " -----------------------------------------------------" >> /etc/banner
+echo "---------------------------------------------------------" >> /etc/banner

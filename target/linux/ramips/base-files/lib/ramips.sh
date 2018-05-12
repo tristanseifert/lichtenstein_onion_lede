@@ -373,6 +373,9 @@ ramips_board_detect() {
 	*"Onion Omega2+")
 		name="omega2p"
 		;;
+	*"Onion Omega2+ (Lichtenstein)")
+		name="omega2p_lichtenstein"
+		;;
 	*"OY-0001")
 		name="oy-0001"
 		;;
