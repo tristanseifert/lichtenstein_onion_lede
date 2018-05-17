@@ -22,14 +22,40 @@
 		};
 	};
 
+	/* specify the 128M of memory on the Omega2+ */
 	memory@0 {
 		device_type = "memory";
 		reg = <0x0 0x8000000>;
 	};
 };
 
+/* define address of firmware in flash */
 &firmware {
 	reg = <0x50000 0x1fb0000>;
+};
+
+/* I2C bus expander (MCP23017) */
+&i2c {
+	mcp23017@20 {
+		/* force the kernel to match to a driver */
+		status = "okay";
+
+		/* MCP23017 driver */
+		compatible = "microchip,mcp23017";
+		#gpio-cells = <2>;
+
+		gpio-controller;
+
+		/* I2C address (all address pins low) */
+		reg = <0x20>;
+
+		/* IRQ configuration (this doesn't work…) */
+		#interrupt-cells = <2>;
+		interrupt-parent = <&gpio1>;
+		interrupts = <2 2>;
+		interrupt-controller;
+		microchip,irq-mirror;
+	};
 };
 
 /* give the LEDs some labels */
