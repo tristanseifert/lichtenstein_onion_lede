@@ -9,16 +9,32 @@
 	gpio-leds {
 		compatible = "gpio-leds";
 
+		/* omega on-board system LED */
 		system_led: system {
 			gpios = <&gpio1 12 GPIO_ACTIVE_LOW>;
 		};
 
+		/* Ethernet activity LEDs */
 		eth_link_led: ethlink {
-			gpios = <&gpio1 18 GPIO_ACTIVE_HIGH>;
+			gpios = <&gpio0 18 GPIO_ACTIVE_HIGH>;
 		};
 
 		eth_act_led: ethact {
-			gpios = <&gpio1 19 GPIO_ACTIVE_HIGH>;
+			gpios = <&gpio0 19 GPIO_ACTIVE_HIGH>;
+		};
+
+		/* status LEDs */
+		status_0_led: status0 {
+			gpios = <&expander 3 GPIO_ACTIVE_HIGH>;
+		};
+		status_1_led: status1 {
+			gpios = <&expander 2 GPIO_ACTIVE_HIGH>;
+		};
+		status_2_led: status2 {
+			gpios = <&expander 1 GPIO_ACTIVE_HIGH>;
+		};
+		status_3_led: status3 {
+			gpios = <&expander 0 GPIO_ACTIVE_HIGH>;
 		};
 	};
 
@@ -36,7 +52,7 @@
 
 /* I2C bus expander (MCP23017) */
 &i2c {
-	mcp23017@20 {
+	expander: mcp23017@20 {
 		/* force the kernel to match to a driver */
 		status = "okay";
 
@@ -58,7 +74,9 @@
 	};
 };
 
-/* give the LEDs some labels */
+
+
+/* assign labels to the system and Ethernet LEDs */
 &system_led {
 	label = "omega2_system_led";
 };
@@ -69,4 +87,19 @@
 
 &eth_act_led {
 	label = "lichtenstein_ethact_led";
+};
+
+
+/* assign labels to the status LEDs */
+&status_0_led {
+	label = "lichtenstein_status0_led";
+};
+&status_1_led {
+	label = "lichtenstein_status1_led";
+};
+&status_2_led {
+	label = "lichtenstein_status2_led";
+};
+&status_3_led {
+	label = "lichtenstein_status3_led";
 };

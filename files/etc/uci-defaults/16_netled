@@ -1,0 +1,25 @@
+#!/bin/sh
+
+. /lib/ramips.sh
+
+# set the system LED to be solid when bootup completes
+uci -q batch <<-EOF > /dev/null
+	set system.@led[1]=led
+	set system.@led[1].default='0'
+	set system.@led[1].name='Ethernet Link'
+	set system.@led[1].sysfs='lichtenstein_ethlink_led'
+	set system.@led[1].trigger='netdev'
+	set system.@led[1].dev='eth0'
+	set system.@led[1].mode='link'
+	set system.@led[2]=led
+	set system.@led[2].default='0'
+	set system.@led[2].trigger='netdev'
+	set system.@led[2].dev='eth0'
+	set system.@led[2].sysfs='lichtenstein_ethact_led'
+	set system.@led[2].mode='tx rx'
+	set system.@led[2].name='Ethernet Activity'
+
+	commit system
+EOF
+
+exit 0
