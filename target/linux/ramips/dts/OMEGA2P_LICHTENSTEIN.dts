@@ -16,11 +16,13 @@
 
 		/* Ethernet activity LEDs */
 		eth_link_led: ethlink {
-			gpios = <&gpio0 18 GPIO_ACTIVE_HIGH>;
+			/*gpios = <&gpio0 18 GPIO_ACTIVE_HIGH>;*/
+			gpios = <&gpio0 1 GPIO_ACTIVE_HIGH>;
 		};
 
 		eth_act_led: ethact {
-			gpios = <&gpio0 19 GPIO_ACTIVE_HIGH>;
+			/*gpios = <&gpio0 19 GPIO_ACTIVE_HIGH>;*/
+			gpios = <&gpio0 0 GPIO_ACTIVE_HIGH>;
 		};
 
 		/* status LEDs */
@@ -72,6 +74,44 @@
 		interrupt-controller;
 		microchip,irq-mirror;
 	};
+
+	/* expansion board EEPROM, default address 0x50 */
+	expansion_id: eeprom@50 {
+		/* force the kernel to match to a driver */
+		status = "okay";
+
+		/* we use 24C02 EEPROMs */
+		compatible = "atmel,24c02";
+		reg = <0x50>;
+		pagesize = <8>;
+
+		/* force read-only */
+		/*read-only;*/
+	};
+
+	/* on-board output EEPROM, default address 0x51 */
+	onboard_id: eeprom@51 {
+		/* force the kernel to match to a driver */
+		status = "okay";
+
+		/* we use 24C02 EEPROMs */
+		compatible = "atmel,24c02";
+		reg = <0x51>;
+		pagesize = <8>;
+
+		/* force read-only */
+		/*read-only;*/
+	};
+
+	/* optional temperature sensor */
+	board_temp: lm75@48 {
+		/* force the kernel to match to a driver */
+		status = "okay";
+
+		/* the board has an LM75BD at addrexx 0x48 */
+		compatible = "national,lm75b";
+		reg = <0x48>;
+	};
 };
 
 
@@ -102,4 +142,63 @@
 };
 &status_3_led {
 	label = "lichtenstein_status3_led";
+};
+
+
+/* reduce SPI speed to 20MHz, and declare extra chip select */
+&spi0 {
+	/* first two native chip selects, third GPIO chip select */
+	cs-gpios = <0>, <0>, <&gpio0 16 GPIO_ACTIVE_LOW>;
+	num-cs = <3>;
+
+	/* internal flash */
+	m25p80@0 {
+		spi-max-frequency = <20000000>;
+	};
+
+	/* expansion header */
+	spidev@1 {
+		spi-max-frequency = <20000000>;
+	};
+
+	/* internal SPI device */
+	spidev@2 {
+		#address-cells = <1>;
+		#size-cells = <1>;
+		compatible = "linux,spidev";
+		reg = <2>;
+
+		spi-max-frequency = <20000000>;
+	};
+};
+
+/* Declare state of pins on boot */
+&pinctrl {
+	state_default: pinctrl0 {
+		/* PWMs are used with the PWM peripheral */
+		pwm0 {
+			ralink,group = "pwm0";
+			ralink,function = "pwm0";
+		};
+		pwm1 {
+			ralink,group = "pwm1";
+			ralink,function = "pwm1";
+		};
+
+		/* I2S pins are used as gpio */
+		i2s {
+			ralink,group = "i2s";
+			ralink,function = "gpio";
+		};
+
+		/* UART1 and 2 pins are used as GPIOs */
+		uart1 {
+			ralink,group = "uart1";
+			ralink,function = "gpio";
+		};
+		uart2 {
+			ralink,group = "uart2";
+			ralink,function = "gpio";
+		};
+	};
 };
